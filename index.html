@@ -745,9 +745,18 @@ function setLang(lang) {
   });
   var icon = lang === 'nl' ? 'uploads/tckr_icon_euro_512.png' : 'uploads/hourlyrateticker_icon_dollar.png';
   document.querySelectorAll('.brand-icon').forEach(function(i) { i.src = icon; });
+  var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
   document.querySelectorAll('.lang-shot').forEach(function(im) {
-    var s = lang === 'nl' ? im.dataset.nl : im.dataset.en;
-    if (s) im.src = s;
+    var base = lang === 'nl' ? im.dataset.nl : im.dataset.en;
+    if (!base) return;
+    if (prefersLight) {
+      var lightSrc = base.replace(/\.(jpe?g|png)$/i, '_light.$1');
+      im.onerror = function() { im.onerror = null; im.src = base; }; // fall back to dark if no light file
+      im.src = lightSrc;
+    } else {
+      im.onerror = null;
+      im.src = base;
+    }
   });
   document.querySelectorAll('.lang-sw button').forEach(function(b) {
     b.classList.toggle('on', b.dataset.lang === lang);
@@ -759,6 +768,12 @@ function setLang(lang) {
 (function() {
   var saved = localStorage.getItem('tckr-lang') || 'en';
   setLang(saved);
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: light)');
+    var onChange = function() { setLang(localStorage.getItem('tckr-lang') || 'en'); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  }
 })();
 </script>
 
