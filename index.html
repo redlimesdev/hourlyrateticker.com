@@ -4,8 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TCKR · Your earnings, right now.</title>
-  <meta name="description" content="One big number. Your earnings, ticking up in real time." />
+  <meta name="description" content="One big number. Your earnings, ticking up in real time. A beautifully simple hourly earnings timer for freelancers — set your rate, hit start, watch it tick. Android, free to download." />
+  <meta name="keywords" content="earnings timer, hourly rate, freelance, live earnings, money timer, billing app, hourly tracker, Android earnings app" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#8a3d92" />
   <link rel="canonical" href="https://hourlyrateticker.com" />
+  <link rel="alternate" hreflang="en" href="https://hourlyrateticker.com" />
+  <link rel="alternate" hreflang="nl" href="https://hourlyrateticker.com" />
+  <link rel="alternate" hreflang="x-default" href="https://hourlyrateticker.com" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="uploads/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="uploads/favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="uploads/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TCKR — Hourly Rate Ticker" />
+  <meta property="og:title" content="TCKR — Your earnings, ticking up live" />
+  <meta property="og:description" content="One big number. Set your rate, hit start, and watch your earnings tick up in real time. Beautifully simple." />
+  <meta property="og:url" content="https://hourlyrateticker.com" />
+  <meta property="og:image" content="https://hourlyrateticker.com/uploads/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="nl_NL" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TCKR — Your earnings, ticking up live" />
+  <meta name="twitter:description" content="One big number. Set your rate, hit start, watch it tick. Free to download on Android." />
+  <meta name="twitter:image" content="https://hourlyrateticker.com/uploads/og-image.png" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Hourly Rate Ticker (TCKR)",
+    "operatingSystem": "ANDROID",
+    "applicationCategory": "BusinessApplication",
+    "description": "A beautifully simple hourly earnings timer. Set your rate, hit start, and watch your earnings tick up in real time. No account, no internet, no nonsense.",
+    "url": "https://hourlyrateticker.com",
+    "installUrl": "https://play.google.com/store/apps/details?id=com.hourlyratetracker.app",
+    "image": "https://hourlyrateticker.com/uploads/og-image.png",
+    "author": { "@type": "Organization", "name": "RedLimesDev" },
+    "offers": [
+      { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free" },
+      { "@type": "Offer", "price": "2.99", "priceCurrency": "USD", "description": "Widget — one-time purchase" }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
@@ -444,15 +493,15 @@
   <div class="phones">
     <div class="ph">
       <div class="ph-island"></div>
-      <img class="lang-shot" data-lightbox data-en="uploads/TCKR_projects_en_usd.jpg" data-nl="uploads/TCKR_projects_en.jpg" src="uploads/TCKR_settings01_en_usd.jpg" data-gallery="shots" alt="TCKR projects" />
+      <img class="lang-shot" data-lightbox data-en="uploads/TCKR_projects_en_usd.jpg" data-nl="uploads/TCKR_projects_en.jpg" src="uploads/TCKR_settings01_en_usd.jpg" data-gallery="shots" loading="lazy" decoding="async" alt="TCKR projects" />
     </div>
     <div class="ph main">
       <div class="ph-island"></div>
-      <img class="lang-shot" data-lightbox data-en="uploads/TCKR_main_en_usd.jpg" data-nl="uploads/TCKR_main_en.jpg" src="uploads/TCKR_main_en_usd.jpg" data-gallery="shots" alt="TCKR live earnings" />
+      <img class="lang-shot" data-lightbox data-en="uploads/TCKR_main_en_usd.jpg" data-nl="uploads/TCKR_main_en.jpg" src="uploads/TCKR_main_en_usd.jpg" data-gallery="shots" loading="lazy" decoding="async" alt="TCKR live earnings" />
     </div>
     <div class="ph">
       <div class="ph-island"></div>
-      <img class="lang-shot" data-lightbox data-en="uploads/TCKR_widget_en_usd.jpg" data-nl="uploads/TCKR_widget_en.jpg" src="uploads/TCKR_widget_en_usd.jpg" data-gallery="shots" alt="TCKR home screen widget" />
+      <img class="lang-shot" data-lightbox data-en="uploads/TCKR_widget_en_usd.jpg" data-nl="uploads/TCKR_widget_en.jpg" src="uploads/TCKR_widget_en_usd.jpg" data-gallery="shots" loading="lazy" decoding="async" alt="TCKR home screen widget" />
     </div>
   </div>
   <div class="theme-sw-wrap">
@@ -667,7 +716,7 @@ const COPY = {
     widgetF1:     "Everything in Free",
     widgetF2:     "Home screen widget",
     widgetF3:     "Multiple projects",
-    widgetF4:     "Instant start and stop via home screen widget",
+    widgetF4:     "Instant start and stop",
     widgetF5:     "Export to csv and pdf",
     widgetCta:    "Pay once, use forever",
     audLabel:     "Perfect for",
