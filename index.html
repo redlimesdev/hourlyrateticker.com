@@ -325,6 +325,11 @@
     }
     .acard h3 { font-size: 0.88rem; font-weight: 600; }
     .acard p { font-size: 0.79rem; color: var(--ink2); line-height: 1.5; }
+    .aud-summary {
+      max-width: 760px; margin: 2.25rem auto 0; text-align: center;
+      font-size: 1.05rem; line-height: 1.55; color: var(--ink2); text-wrap: pretty;
+    }
+    .aud-summary strong { color: var(--ink); font-weight: 600; }
 
     /* ── CROSSLINK ───────────────────────── */
     .crosslink-wrap { max-width: 1100px; margin: 0 auto; }
@@ -621,30 +626,31 @@
   <div class="aud-grid">
 
     <div class="acard">
-      <div class="aico"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-      <h3 data-key="aud1Title">Freelancers</h3>
-      <p data-key="aud1Desc">Independent professionals across any field</p>
+      <div class="aico"><svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+      <h3 data-key="aud1Title">One Rate, One Job</h3>
+      <p data-key="aud1Desc">Bill the same hourly rate no matter what the work is.</p>
     </div>
 
     <div class="acard">
-      <div class="aico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-      <h3 data-key="aud2Title">Consultants</h3>
-      <p data-key="aud2Desc">Advisors and specialists with multiple clients</p>
+      <div class="aico"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+      <h3 data-key="aud2Title">Side Gigs &amp; Small Jobs</h3>
+      <p data-key="aud2Desc">Tutoring, repairs, errands — anything billed simply, one job at a time.</p>
     </div>
 
     <div class="acard">
-      <div class="aico"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-      <h3 data-key="aud3Title">Creatives</h3>
-      <p data-key="aud3Desc">Designers, developers and photographers</p>
+      <div class="aico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <h3 data-key="aud3Title">Hourly Shift Work</h3>
+      <p data-key="aud3Desc">Clock in, clock out — the rate doesn’t change.</p>
     </div>
 
     <div class="acard">
-      <div class="aico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
-      <h3 data-key="aud4Title">Professionals</h3>
-      <p data-key="aud4Desc">Coaches, therapists, lawyers and more</p>
+      <div class="aico"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+      <h3 data-key="aud4Title">Anyone Who Wants to Watch the Number Climb</h3>
+      <p data-key="aud4Desc">Not everyone using TCKR is billing a client — some just want to stay focused and watch progress add up.</p>
     </div>
 
   </div>
+  <p class="aud-summary" data-key="audSummary"><strong>If you bill one rate, no matter the job, TCKR is built for you.</strong> Need different rates for different tasks? That’s TRCKR.</p>
 </section>
 
 <!-- CROSS-LINK TO TRCKR -->
@@ -737,14 +743,15 @@ const COPY = {
     widgetCta:    "Pay once, use forever",
     audLabel:     "Perfect for",
     audH2:        "Anyone who earns by the hour",
-    aud1Title:    "Freelancers",
-    aud1Desc:     "Independent professionals across any field",
-    aud2Title:    "Consultants",
-    aud2Desc:     "Advisors and specialists with multiple clients",
-    aud3Title:    "Creatives",
-    aud3Desc:     "Designers, developers and photographers",
-    aud4Title:    "Professionals",
-    aud4Desc:     "Coaches, therapists, lawyers and more",
+    aud1Title:    "One Rate, One Job",
+    aud1Desc:     "Bill the same hourly rate no matter what the work is.",
+    aud2Title:    "Side Gigs & Small Jobs",
+    aud2Desc:     "Tutoring, repairs, errands \u2014 anything billed simply, one job at a time.",
+    aud3Title:    "Hourly Shift Work",
+    aud3Desc:     "Clock in, clock out \u2014 the rate doesn\u2019t change.",
+    aud4Title:    "Anyone Who Wants to Watch the Number Climb",
+    aud4Desc:     "Not everyone using TCKR is billing a client \u2014 some just want to stay focused and watch progress add up.",
+    audSummary:   "<strong>If you bill one rate, no matter the job, TCKR is built for you.</strong> Need different rates for different tasks? That\u2019s TRCKR.",
     xlLabel:      "Need the full toolkit?",
     xlTitle:      "Multiple tasks, multiple rates \u2014 meet TRCKR",
     xlDesc:       "If you\u2019re billing different rates for different tasks within the same project \u2014 design at one rate, development at another \u2014 TRCKR is built for that. TCKR is for single-rate work, one job at a time.",
@@ -807,14 +814,15 @@ const COPY = {
     widgetCta:    "E\u00e9n keer betalen, voor altijd gebruiken",
     audLabel:     "Ideaal voor",
     audH2:        "Iedereen die tegen een vast uurtarief factureerd",
-    aud1Title:    "Freelancers",
-    aud1Desc:     "Zelfstandige professionals in elk vakgebied",
-    aud2Title:    "Adviseurs",
-    aud2Desc:     "Consultants en specialisten met meerdere klanten",
-    aud3Title:    "Creatievelingen",
-    aud3Desc:     "Designers, developers en fotografen",
-    aud4Title:    "Professionals",
-    aud4Desc:     "Coaches, therapeuten, advocaten en meer",
+    aud1Title:    "\u00c9\u00e9n tarief, \u00e9\u00e9n klus",
+    aud1Desc:     "Factureer hetzelfde uurtarief, wat het werk ook is.",
+    aud2Title:    "Bijklussen & kleine opdrachten",
+    aud2Desc:     "Bijles, reparaties, klusjes \u2014 alles wat je simpel afrekent, \u00e9\u00e9n klus tegelijk.",
+    aud3Title:    "Werk op uurbasis",
+    aud3Desc:     "In- en uitklokken \u2014 het tarief blijft hetzelfde.",
+    aud4Title:    "Iedereen die het bedrag wil zien oplopen",
+    aud4Desc:     "Niet iedereen die TCKR gebruikt factureert een klant \u2014 sommigen willen gewoon gefocust blijven en hun voortgang zien.",
+    audSummary:   "<strong>Factureer je \u00e9\u00e9n tarief, ongeacht de klus? Dan is TCKR voor jou gemaakt.</strong> Verschillende tarieven voor verschillende taken nodig? Dat is TRCKR.",
     xlLabel:      "De volledige toolkit nodig?",
     xlTitle:      "Meerdere taken, meerdere tarieven \u2014 kies voor TRCKR",
     xlDesc:       "Reken je verschillende tarieven voor verschillende taken binnen hetzelfde project \u2014 ontwerp tegen het ene tarief, ontwikkeling tegen het andere \u2014 dan is TRCKR jouw tool. TCKR is voor werk met \u00e9\u00e9n tarief, \u00e9\u00e9n klus tegelijk.",
