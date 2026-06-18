@@ -236,6 +236,8 @@
       max-width: 1100px; margin: 0 auto;
       display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem;
     }
+    /* center a lone card on the final row */
+    .feat-grid .fc:last-child:nth-child(3n+1) { grid-column: 2; }
     .fc {
       background: white; border: 1px solid var(--brd);
       border-radius: var(--rlg); padding: 1.5rem 1.5rem 1.6rem;
@@ -547,6 +549,12 @@
     </div>
 
     <div class="fc">
+      <div class="fi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
+      <h3 data-key="feat7Title">Save the Job, Add a Note</h3>
+      <p data-key="feat7Desc">Give your project a name and jot down what you did. It’s all there when you export — ready to hand over or file away.</p>
+    </div>
+
+    <div class="fc">
       <div class="fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
       <h3 data-key="feat5Title">Dark and Light Theme</h3>
       <p data-key="feat5Desc">Switch between dark and light mode to match your preference or system setting.</p>
@@ -565,7 +573,7 @@
 <section class="sec">
   <div class="sec-hd">
     <p class="sec-lbl" data-key="pricingLabel">Pricing</p>
-    <h2 data-key="pricingH2">Upgrade: widget, multiple projects and export. </h2>
+    <h2 data-key="pricingH2">Upgrade: widget, unlimited projects, and export</h2>
   </div>
   <div class="pricing-grid">
 
@@ -579,6 +587,7 @@
         <li><span class="chk"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4.5,8 8,2.5"/></svg></span><span data-key="freeF3">Any rate &amp; currency</span></li>
         <li><span class="chk"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4.5,8 8,2.5"/></svg></span><span data-key="freeF4">Cash register chime</span></li>
         <li><span class="chk"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4.5,8 8,2.5"/></svg></span><span data-key="freeF5">Dark / light / system theme</span></li>
+        <li><span class="chk"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4.5,8 8,2.5"/></svg></span><span data-key="freeF6">One project, with notes</span></li>
       </ul>
     </div>
 
@@ -590,8 +599,8 @@
         <li><span class="chk"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4.5,8 8,2.5"/></svg></span><span data-key="widgetF1">Everything in Free</span></li>
         <li><span class="chk"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4.5,8 8,2.5"/></svg></span><span data-key="widgetF2">Home screen widget</span></li>
         <li><span class="chk"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4.5,8 8,2.5"/></svg></span><span data-key="widgetF3">Instant start and stop via widget</span></li>
-        <li><span class="chk"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4.5,8 8,2.5"/></svg></span><span data-key="widgetF4">Multiple projects</span></li>
-        <li><span class="chk"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4.5,8 8,2.5"/></svg></span><span data-key="widgetF5">Export cvs and pdf</span></li>
+        <li><span class="chk"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4.5,8 8,2.5"/></svg></span><span data-key="widgetF4">Unlimited projects</span></li>
+        <li><span class="chk"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4.5,8 8,2.5"/></svg></span><span data-key="widgetF5">Export to PDF or CSV — notes included</span></li>
       </ul>
       <a class="pc-cta" href="#download" data-key="widgetCta">Pay once, use forever</a>
     </div>
@@ -640,8 +649,8 @@
     <div class="crosslink">
       <div class="crosslink-text">
         <p class="crosslink-lbl" data-key="xlLabel">Need the full toolkit?</p>
-        <h3 data-key="xlTitle">Multiple projects, history &amp; exports — meet TRCKR</h3>
-        <p data-key="xlDesc">If you need multiple projects, task switching, variable rates, and PDF or CSV exports for invoicing — TRCKR has you covered.</p>
+        <h3 data-key="xlTitle">Multiple tasks, multiple rates — meet TRCKR</h3>
+        <p data-key="xlDesc">If you’re billing different rates for different tasks within the same project — design at one rate, development at another — TRCKR is built for that. TCKR is for single-rate work, one job at a time.</p>
       </div>
       <a class="crosslink-btn" href="https://hourlyratetracker.com" target="_blank" rel="noopener">
         <span data-key="xlBtn">Discover TRCKR</span>
@@ -700,8 +709,10 @@ const COPY = {
     feat5Desc:    "Switch between dark and light mode to match your preference or system setting.",
     feat6Title:   "No Account Required",
     feat6Desc:    "Everything stays on your device. No internet, no sign-up, no subscriptions. Ever.",
+    feat7Title:   "Save the Job, Add a Note",
+    feat7Desc:    "Give your project a name and jot down what you did. It\u2019s all there when you export \u2014 ready to hand over or file away.",
     pricingLabel: "Pricing",
-    pricingH2:    "Upgrade: widget, multiple tasks and export",
+    pricingH2:    "Upgrade: widget, unlimited projects, and export",
     freeTier:     "Base",
     freePrice:    "Free",
     freeNote:     "Full earnings timer, forever",
@@ -710,14 +721,15 @@ const COPY = {
     freeF3:       "Any rate &amp; currency",
     freeF4:       "Cash register chime",
     freeF5:       "Dark / light / system theme",
+    freeF6:       "One project, with notes",
     widgetTier:   "Upgrade",
     widgetPrice:  "$2.99 / \u20ac2.99",
     widgetNote:   "One-time purchase \u00b7 No subscription",
     widgetF1:     "Everything in Free",
     widgetF2:     "Home screen widget",
-    widgetF3:     "Multiple projects",
+    widgetF3:     "Unlimited projects",
     widgetF4:     "Instant start and stop",
-    widgetF5:     "Export to csv and pdf",
+    widgetF5:     "Export to PDF or CSV \u2014 notes included",
     widgetCta:    "Pay once, use forever",
     audLabel:     "Perfect for",
     audH2:        "Anyone who earns by the hour",
@@ -730,8 +742,8 @@ const COPY = {
     aud4Title:    "Professionals",
     aud4Desc:     "Coaches, therapists, lawyers and more",
     xlLabel:      "Need the full toolkit?",
-    xlTitle:      "Multiple projects, tasks &amp; exports \u2014 meet TRCKR",
-    xlDesc:       "If you need multiple projects, task switching, variable rates, and PDF or CSV exports for invoicing \u2014 TRCKR has you covered.",
+    xlTitle:      "Multiple tasks, multiple rates \u2014 meet TRCKR",
+    xlDesc:       "If you\u2019re billing different rates for different tasks within the same project \u2014 design at one rate, development at another \u2014 TRCKR is built for that. TCKR is for single-rate work, one job at a time.",
     xlBtn:        "Discover TRCKR",
     ftTagline:    "No account. No internet. No nonsense.",
     ftPrivacy:    "Privacy Policy",
@@ -767,8 +779,10 @@ const COPY = {
     feat5Desc:    "Schakel tussen donkere en lichte modus naar jouw voorkeur of systeeminstelling.",
     feat6Title:   "Geen Account Vereist",
     feat6Desc:    "Alles blijft op je toestel. Geen internet, geen registratie, geen abonnementen. Nooit.",
+    feat7Title:   "Bewaar de klus, voeg een notitie toe",
+    feat7Desc:    "Geef je project een naam en noteer wat je hebt gedaan. Het staat er allemaal bij de export \u2014 klaar om te overhandigen of te bewaren.",
     pricingLabel: "Prijzen",
-    pricingH2:    "Upgrade: widget, meerdere projecten en export.",
+    pricingH2:    "Upgrade: widget, onbeperkte projecten en export",
     freeTier:     "Basis",
     freePrice:    "Gratis",
     freeNote:     "Volledige verdienstentimer, voor altijd",
@@ -777,14 +791,15 @@ const COPY = {
     freeF3:       "Elk tarief &amp; elke valuta",
     freeF4:       "Kassageluid",
     freeF5:       "Donker / licht / systeemthema",
+    freeF6:       "E\u00e9n project, met notities",
     widgetTier:   "Upgrade",
     widgetPrice:  "\u20ac2,99",
     widgetNote:   "Eenmalige aankoop \u00b7 Geen abonnement",
     widgetF1:     "Alles uit Gratis",
     widgetF2:     "Widget op home screen",
-    widgetF3:     "Meerder projecten",
+    widgetF3:     "Onbeperkte projecten",
     widgetF4:     "Directe start en stopfunctie via de widget",
-    widgetF5:     "Exportfunctie naar cvs en pdf",
+    widgetF5:     "Export naar PDF of CSV \u2014 inclusief notities",
     widgetCta:    "E\u00e9n keer betalen, voor altijd gebruiken",
     audLabel:     "Ideaal voor",
     audH2:        "Iedereen die per uur declareert",
@@ -797,8 +812,8 @@ const COPY = {
     aud4Title:    "Professionals",
     aud4Desc:     "Coaches, therapeuten, advocaten en meer",
     xlLabel:      "De volledige toolkit nodig?",
-    xlTitle:      "Meerdere projecten, taken, wisselende uurtarieven; exports \u2014 kies voor TRCKR",
-    xlDesc:       "Als je meerdere projecten, taakoverzichten, variabele uurtarieven en PDF- of CSV-exports nodig hebt \u2014 TRCKR heeft het.",
+    xlTitle:      "Meerdere taken, meerdere tarieven \u2014 kies voor TRCKR",
+    xlDesc:       "Reken je verschillende tarieven voor verschillende taken binnen hetzelfde project \u2014 ontwerp tegen het ene tarief, ontwikkeling tegen het andere \u2014 dan is TRCKR daarvoor gemaakt. TCKR is voor werk met \u00e9\u00e9n tarief, \u00e9\u00e9n klus tegelijk.",
     xlBtn:        "Ontdek TRCKR",
     ftTagline:    "Geen account. Geen internet. Geen onzin.",
     ftPrivacy:    "Privacybeleid",
