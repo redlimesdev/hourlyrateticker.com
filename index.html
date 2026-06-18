@@ -458,7 +458,7 @@
     <div class="hero-phone-wrap">
       <div class="hero-phone">
         <div class="ph-island"></div>
-        <img class="lang-shot" data-lightbox data-en="uploads/TCKR_main_en_usd.jpg" data-nl="uploads/TCKR_main_en_usd.jpg" src="uploads/TCKR_main_en_usd.jpg" alt="TCKR live earnings screen" />
+        <img class="lang-shot" data-lightbox data-en="uploads/TCKR_main_en_usd.jpg?v=20260618" data-nl="uploads/TCKR_main_en_usd.jpg?v=20260618" src="uploads/TCKR_main_en_usd.jpg?v=20260618" alt="TCKR live earnings screen" />
       </div>
       <div class="fpill fpill-1">
         <span class="fdot"></span>
@@ -495,15 +495,15 @@
   <div class="phones">
     <div class="ph">
       <div class="ph-island"></div>
-      <img class="lang-shot" data-lightbox data-en="uploads/TCKR_projects_en_usd.jpg" data-nl="uploads/TCKR_projects_en_usd.jpg" src="uploads/TCKR_projects_en_usd.jpg" data-gallery="shots" loading="lazy" decoding="async" alt="TCKR projects" />
+      <img class="lang-shot" data-lightbox data-en="uploads/TCKR_projects_en_usd.jpg?v=20260618" data-nl="uploads/TCKR_projects_en_usd.jpg?v=20260618" src="uploads/TCKR_projects_en_usd.jpg?v=20260618" data-gallery="shots" loading="lazy" decoding="async" alt="TCKR projects" />
     </div>
     <div class="ph main">
       <div class="ph-island"></div>
-      <img class="lang-shot" data-lightbox data-en="uploads/TCKR_main_en_usd.jpg" data-nl="uploads/TCKR_main_en_usd.jpg" src="uploads/TCKR_main_en_usd.jpg" data-gallery="shots" loading="lazy" decoding="async" alt="TCKR live earnings" />
+      <img class="lang-shot" data-lightbox data-en="uploads/TCKR_main_en_usd.jpg?v=20260618" data-nl="uploads/TCKR_main_en_usd.jpg?v=20260618" src="uploads/TCKR_main_en_usd.jpg?v=20260618" data-gallery="shots" loading="lazy" decoding="async" alt="TCKR live earnings" />
     </div>
     <div class="ph">
       <div class="ph-island"></div>
-      <img class="lang-shot" data-lightbox data-en="uploads/TCKR_widget_en_usd.jpg" data-nl="uploads/TCKR_widget_en_usd.jpg" src="uploads/TCKR_widget_en_usd.jpg" data-gallery="shots" loading="lazy" decoding="async" alt="TCKR home screen widget" />
+      <img class="lang-shot" data-lightbox data-en="uploads/TCKR_widget_en_usd.jpg?v=20260618" data-nl="uploads/TCKR_widget_en_usd.jpg?v=20260618" src="uploads/TCKR_widget_en_usd.jpg?v=20260618" data-gallery="shots" loading="lazy" decoding="async" alt="TCKR home screen widget" />
     </div>
   </div>
   <div class="theme-sw-wrap">
@@ -855,7 +855,7 @@ function applyShots(lang) {
     var base = lang === 'nl' ? im.dataset.nl : im.dataset.en;
     if (!base) return;
     if (!dark) {
-      var lightSrc = base.replace(/\.(jpe?g|png)$/i, '_light.$1');
+      var lightSrc = base.replace(/\.(jpe?g|png)(\?[^"']*)?$/i, '_light.$1$2');
       im.onerror = function() { im.onerror = null; im.src = base; }; // fall back to dark file if no light version
       im.src = lightSrc;
     } else {
