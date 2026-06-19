@@ -217,6 +217,14 @@
     .theme-sw button + button { border-left: 1.5px solid var(--brd); }
     .theme-sw button.on { background: var(--brand); color: #fff; }
     .hero-trust { font-size: 0.77rem; color: var(--ink3); margin-top: 0.875rem; letter-spacing: 0.01em; text-align: center; width: 100%; }
+    .hero-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 1.1rem; width: 100%; }
+    .hbadge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.78rem; font-weight: 600; color: var(--ink2);
+      background: var(--bg2); border: 1px solid var(--brd);
+      padding: 0.42rem 0.8rem; border-radius: 999px; white-space: nowrap;
+    }
+    .hbadge svg { width: 13px; height: 13px; stroke: var(--brand); stroke-width: 2.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 
     /* ── SECTIONS ────────────────────────── */
     .sec { padding: clamp(4rem,7vw,6.5rem) clamp(1.5rem,5vw,5rem); }
@@ -549,7 +557,11 @@
       -->
       <a class="gplay-badge" href="https://play.google.com/store/apps/details?id=com.hourlyrateticker.app" target="_blank" rel="noopener"><img src="uploads/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" /></a>
     </div>
-    <p class="hero-trust" data-key="heroTrust">No data shared · No data collected · No ads</p>
+    <div class="hero-badges">
+      <span class="hbadge"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-key="heroBadge1">No subscription</span></span>
+      <span class="hbadge"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-key="heroBadge2">No ads</span></span>
+      <span class="hbadge"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-key="heroBadge3">Nothing shared</span></span>
+    </div>
   </div>
 </section>
 
@@ -754,7 +766,9 @@ const COPY = {
     heroLabel:    "Free to download \u00b7 Upgrade $2.99",
     heroH1:       "One number.<br><em>Your earnings, right now.</em>",
     heroSub:      "No complexity. Set your rate, hit start, and watch it tick.",
-    heroTrust:    "No data shared \u00b7 No data collected \u00b7 No ads",
+    heroBadge1:   "No subscription",
+    heroBadge2:   "No ads",
+    heroBadge3:   "Nothing shared",
     pill1:        "Live earnings",
     pill2:        "No account needed",
     shotsLabel:   "Screenshots",
@@ -836,7 +850,9 @@ const COPY = {
     heroLabel:    "Gratis te downloaden \u00b7 Upgrade \u20ac2,99",
     heroH1:       "E\u00e9n getal.<br><em>Jouw verdiensten, live.</em>",
     heroSub:      "Geen complexiteit. Stel je tarief in, druk op start en zie live jouw factuur groeien.",
-    heroTrust:    "Geen gegevens gedeeld \u00b7 Geen gegevens verzameld \u00b7 Geen advertenties",
+    heroBadge1:   "Geen abonnement",
+    heroBadge2:   "Geen advertenties",
+    heroBadge3:   "Niets gedeeld",
     pill1:        "Live verdiensten",
     pill2:        "Geen account nodig",
     shotsLabel:   "Screenshots",
