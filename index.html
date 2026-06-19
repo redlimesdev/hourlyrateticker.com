@@ -438,6 +438,8 @@
     .cm-field input:focus, .cm-field textarea:focus {
       outline: none; border-color: var(--brand); background: var(--bg);
     }
+    .cm-captcha { margin-bottom: 1rem; min-height: 78px; }
+    @media (max-width: 360px) { .cm-captcha { transform: scale(0.85); transform-origin: left top; } }
     .cm-submit {
       width: 100%; font: inherit; font-weight: 600; font-size: 0.95rem;
       background: var(--brand); color: #fff; border: none; border-radius: var(--r);
@@ -826,7 +828,8 @@ const COPY = {
     cmSend:       "Send message",
     cmError:      "Something went wrong. Please try again, or email us directly.",
     cmThanksTitle:"Message sent",
-    cmThanksSub:  "Thanks for reaching out \u2014 we\u2019ll reply to your email soon."
+    cmThanksSub:  "Thanks for reaching out \u2014 we\u2019ll reply to your email soon.",
+    cmCaptcha:    "Please confirm you\u2019re not a robot."
   },
   nl: {
     navCta:       "Gratis downloaden",
@@ -907,7 +910,8 @@ const COPY = {
     cmSend:       "Verstuur bericht",
     cmError:      "Er ging iets mis. Probeer het opnieuw of mail ons rechtstreeks.",
     cmThanksTitle:"Bericht verzonden",
-    cmThanksSub:  "Bedankt voor je bericht \u2014 we reageren snel via je e-mail."
+    cmThanksSub:  "Bedankt voor je bericht \u2014 we reageren snel via je e-mail.",
+    cmCaptcha:    "Bevestig dat je geen robot bent."
   }
 };
 
@@ -1021,6 +1025,7 @@ function setTheme(pref) {
         </div>
         <input type="hidden" name="_subject" value="TCKR support message" />
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+        <div class="cm-captcha"><div class="g-recaptcha" data-sitekey="6LfH1yctAAAAAK53bsU5-xyJEuATwFZ3jXbh7w15"></div></div>
         <button type="submit" class="cm-submit" data-key="cmSend">Send message</button>
         <p class="cm-status" id="cmStatus"></p>
       </form>
@@ -1035,6 +1040,7 @@ function setTheme(pref) {
   </div>
 </div>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
 (function() {
   var modal = document.getElementById('contactModal');
@@ -1078,6 +1084,11 @@ function setTheme(pref) {
     var btn = form.querySelector('.cm-submit');
     statusEl.className = 'cm-status';
     statusEl.textContent = '';
+    if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse && grecaptcha.getResponse().length === 0) {
+      statusEl.textContent = t('cmCaptcha');
+      statusEl.className = 'cm-status err show';
+      return;
+    }
     btn.disabled = true;
     fetch(form.action, {
       method: 'POST',
@@ -1100,6 +1111,7 @@ function setTheme(pref) {
       statusEl.className = 'cm-status err show';
     }).then(function() {
       btn.disabled = false;
+      if (typeof grecaptcha !== 'undefined' && grecaptcha.reset) grecaptcha.reset();
     });
   });
 })();
